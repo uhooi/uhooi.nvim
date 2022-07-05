@@ -2,7 +2,7 @@
 
 Blazingly fast implementation for UHOOI with Neovim Lua.
 
-https://user-images.githubusercontent.com/1239245/172523289-7ef6f617-fc36-45f8-96bd-274e6f77e4aa.mp4
+https://user-images.githubusercontent.com/21194714/177351810-f84d0363-426f-4826-b9ae-e93163cdf682.mov
 
 ## What's this?
 
