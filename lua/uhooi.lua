@@ -12,10 +12,10 @@ local api = setmetatable({ _cache = {} }, {
     return self._cache[name]
   end,
 })
-local Nekokak = {}
+local Uhooi = {}
 
-Nekokak.new = function()
-  local self = setmetatable({}, { __index = Nekokak })
+Uhooi.new = function()
+  local self = setmetatable({}, { __index = Uhooi })
   self.images = {}
   self.default_options = {
     wait_ms = 100,
@@ -25,14 +25,14 @@ Nekokak.new = function()
   return self
 end
 
-function Nekokak:setup()
-  api.create_user_command("Nekokak", function(options)
+function Uhooi:setup()
+  api.create_user_command("Uhooi", function(options)
     local opts = options.args == "" and {} or assert(loadstring("return " .. options.args)())
     self:start(opts)
   end, { nargs = "?" })
 end
 
-function Nekokak:start(opts)
+function Uhooi:start(opts)
   opts = vim.tbl_extend("force", self.default_options, opts or {})
   vim.validate {
     wait_ms = {
@@ -60,7 +60,7 @@ function Nekokak:start(opts)
   }
   self:load_data()
 
-  api.buf_set_name(0, "==nekokak==")
+  api.buf_set_name(0, "==uhooi==")
   vim.opt.buftype = "nowrite"
   vim.opt.swapfile = false
   vim.opt.bufhidden = "wipe"
@@ -73,7 +73,7 @@ function Nekokak:start(opts)
   vim.opt.cursorcolumn = false
   vim.cmd [[redraw]]
 
-  local namespace = api.create_namespace "nekokak"
+  local namespace = api.create_namespace "uhooi"
   local images = self:create_animation(opts.direction, opts.count)
   for _, image in ipairs(images) do
     self:draw(namespace, image)
@@ -83,7 +83,7 @@ function Nekokak:start(opts)
   -- api.buf_clear_namespace(0, namespace, 0, -1)
 end
 
-function Nekokak:create_animation(direction, count)
+function Uhooi:create_animation(direction, count)
   local images = {}
   if direction == "expand" then
     images = vim.deepcopy(self.images)
@@ -116,7 +116,7 @@ function Nekokak:create_animation(direction, count)
   return images
 end
 
-function Nekokak:draw(namespace, image)
+function Uhooi:draw(namespace, image)
   api.buf_set_lines(0, 0, #image.map, false, image.map)
   for row, line in ipairs(image.map) do
     local col = 0
@@ -125,7 +125,7 @@ function Nekokak:draw(namespace, image)
       if not color then
         error("cannot find the color: " .. image.name .. ", " .. chars)
       end
-      local hl_group = ("Nekokak%02d%02d"):format(row, col)
+      local hl_group = ("Uhooi%02d%02d"):format(row, col)
       -- TODO: nvim_set_hl cannot have namespace on arg 1 ???
       -- api.set_hl(namespace, hl_group, { fg = color, bg = color })
       api.set_hl(0, hl_group, { fg = color, bg = color })
@@ -135,7 +135,7 @@ function Nekokak:draw(namespace, image)
   end
 end
 
-function Nekokak:load_data()
+function Uhooi:load_data()
   local data_dir = self:plugin_dir() .. "/data"
   local dir = uv.fs_opendir(data_dir)
   while true do
@@ -185,17 +185,17 @@ function Nekokak:load_data()
   dir:closedir()
 end
 
-function Nekokak:plugin_dir()
+function Uhooi:plugin_dir()
   local str = debug.getinfo(2, "S").source:sub(2)
   local dir = str:match [[^(.*)/lua/]]
   return dir
 end
 
-local n = Nekokak.new()
+local u = Uhooi.new()
 
 return {
-  nekokak = n,
+  uhooi = u,
   setup = function()
-    n:setup()
+    u:setup()
   end,
 }

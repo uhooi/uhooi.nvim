@@ -1,14 +1,14 @@
-# nekokak.nvim
+# uhooi.nvim
 
-Blazingly fast implementation for NEKOKAK with Neovim Lua.
+Blazingly fast implementation for UHOOI with Neovim Lua.
 
 https://user-images.githubusercontent.com/1239245/172523289-7ef6f617-fc36-45f8-96bd-274e6f77e4aa.mp4
 
 ## What's this?
 
-This is a fork of [mattn/vim-nekokak][] implemented by Lua.
+This is a fork of [delphinus/nekokak.nvim][] implemented by Lua.
 
-[mattn/vim-nekokak]: https://github.com/mattn/vim-nekokak
+[delphinus/nekokak.nvim]: https://github.com/delphinus/nekokak.nvim
 
 ## Installation
 
@@ -16,9 +16,9 @@ This is a fork of [mattn/vim-nekokak][] implemented by Lua.
 
 ```lua
 use {
-  "delphinus/nekokak.nvim",
+  "uhooi/uhooi.nvim",
   config = function()
-    require "nekokak".setup {}
+    require "uhooi".setup {}
   end,
 }
 ```
@@ -28,29 +28,29 @@ use {
 ### for builtin [packages][]
 
 ```sh
-git clone https://github.com/delphinus/nekokak.nvim \
-  $HOME/.local/share/nvim/site/pack/foobar/start/nekokak.nvim
+git clone https://github.com/uhooi/uhooi.nvim \
+  $HOME/.local/share/nvim/site/pack/foobar/start/uhooi.nvim
 ```
 
 ```lua
 -- And in your init.lua……
-require "nekokak".setup {}
+require "uhooi".setup {}
 ```
 
 [packages]: https://neovim.io/doc/user/repeat.html#packages
 
 ## Commands
 
-### `Nekokak`
+### `Uhooi`
 
 ```vim
-:Nekokak
+:Uhooi
 ```
 
 You see him.
 
 ```vim
-:Nekokak { wait_ms = 10, direction = 'loop' }
+:Uhooi { wait_ms = 10, direction = 'loop' }
 ```
 
 You see more passionate him.
@@ -68,14 +68,14 @@ You see more passionate him.
 
 ### `start(opts)`
 
-You can start NEKOKAK.
+You can start UHOOI.
 
 ```lua
-:lua require "nekokak".start { wait_ms = 10, direction = 'loop' }
+:lua require "uhooi".start { wait_ms = 10, direction = 'loop' }
 ```
 
-`opts` are the same one as for `:Nekokak`.
+`opts` are the same one as for `:Uhooi`.
 
 ## See also
 
-* [mattn/vim-nekokak][]
+* [delphinus/nekokak.nvim][]
