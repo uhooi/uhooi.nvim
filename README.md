@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/21194714/177351810-f84d0363-426f-4826-
 
 ## What's this?
 
-This is a fork of [delphinus/nekokak.nvim][] implemented by Lua.
+This is a fork of [delphinus/nekokak.nvim][] that replaced Nekokak with Uhooi.
 
 [delphinus/nekokak.nvim]: https://github.com/delphinus/nekokak.nvim
 
