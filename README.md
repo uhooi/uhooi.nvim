@@ -25,6 +25,20 @@ use {
 
 [packer.nvim]: https://github.com/wbthomason/packer.nvim
 
+### for [Dein.vim][]
+
+```toml
+[[plugins]]
+repo = 'uhooi/uhooi.nvim'
+if = "has('nvim')"
+```
+
+```shell
+:lua require "uhooi".setup {}
+```
+
+[Dein.vim]: https://github.com/Shougo/dein.vim
+
 ### for builtin [packages][]
 
 ```sh
