@@ -10,6 +10,14 @@ This is a fork of [delphinus/nekokak.nvim][] that replaced Nekokak with Uhooi.
 
 [delphinus/nekokak.nvim]: https://github.com/delphinus/nekokak.nvim
 
+## Requirements
+
+- Terminal: support True Color
+  - e.g. [iTerm2][]
+- Run `:set termguicolors`
+
+[iTerm2]: https://iterm2.com/
+
 ## Installation
 
 ### for [packer.nvim][]
