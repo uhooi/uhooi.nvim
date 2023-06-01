@@ -20,13 +20,26 @@ This is a fork of [delphinus/nekokak.nvim][] that replaced Nekokak with Uhooi.
 
 ## Installation
 
+### for [lazy.nvim][]
+
+```lua
+{
+  'uhooi/uhooi.nvim',
+  config = function()
+    require('uhooi').setup()
+  end,
+},
+```
+
+[lazy.nvim]: https://github.com/folke/lazy.nvim
+
 ### for [packer.nvim][]
 
 ```lua
 use {
-  "uhooi/uhooi.nvim",
+  'uhooi/uhooi.nvim',
   config = function()
-    require('uhooi').setup {}
+    require('uhooi').setup()
   end,
 }
 ```
@@ -42,7 +55,7 @@ if = "has('nvim')"
 ```
 
 ```shell
-:lua require('uhooi').setup {}
+:lua require('uhooi').setup()
 ```
 
 [Dein.vim]: https://github.com/Shougo/dein.vim
@@ -56,7 +69,7 @@ git clone https://github.com/uhooi/uhooi.nvim \
 
 ```lua
 -- And in your init.lua……
-require('uhooi').setup {}
+require('uhooi').setup()
 ```
 
 [packages]: https://neovim.io/doc/user/repeat.html#packages
